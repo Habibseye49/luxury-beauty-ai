@@ -1,9 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Luxury Beauty AI</title>
-</head>
-<body>
-<h1>Welcome to Luxury Beauty AI</h1>
-</body>
-</html>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Luxury Beauty AI</title>
+        <script>
+            async function startQuiz() {
+                const response = await fetch('http://localhost:3000/api/quiz');
+                const data = await response.json();
+                document.getElementById('result').innerText = data.message;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Luxury Beauty AI Quiz</h1>
+        <button onclick="startQuiz()">Start Quiz</button>
+        <p id="result"></p>
+    </body>
+    </html>
+    
